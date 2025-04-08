@@ -7,7 +7,7 @@ namespace StudentPortal.Web.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) 
         {
-            
+            //testd
         }
 
         public DbSet<Student> Students { get; set; }
