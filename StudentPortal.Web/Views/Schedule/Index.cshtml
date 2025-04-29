@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ScheduleItem> 
+
+@{
+    ViewData["Title"] = "Student Schedule";}
+
+<style>
+    .schedule-container {
+        background-color: #ffffffcc;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: auto;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 30px;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f4a261;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #fcefe3;
+    }
+</style>
+
+<div class="text-center mt-5 schedule-container">
+    <h1 class="display-4 fw-bold text-primary">Weekly Program</h1>
+    <p class="lead mt-3">View the weekly schedule for all students.</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Subject</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Day</td>
+                    <td>@item.Subject</td>
+                    <td>@item.Time</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="mt-5">
+        <a href="/Home/Index" class="btn btn-warm-primary btn-lg px-4">Back to Home</a>
+    </div>
+</div>
